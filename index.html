@@ -46,12 +46,22 @@ body{
 
 /* Header */
 .header{
-  padding:50px 24px 10px;display:flex;align-items:center;justify-content:flex-start;
-  position:relative;z-index:1;
+  padding:50px 24px 10px;display:flex;align-items:flex-start;justify-content:flex-start;
+  gap:12px;position:relative;z-index:1;
 }
-.header-logo-banner{
-  width:70%;max-width:280px;height:auto;object-fit:contain;
+.header-logo-img{
+  width:65px;height:65px;object-fit:contain;
   filter:drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+}
+.brand-text{text-align:left;padding-top:2px}
+.brand-name{
+  font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;
+  letter-spacing:4px;color:var(--gold);text-transform:uppercase;line-height:1.1;
+}
+.brand-sub{
+  font-family:'Lucida Calligraphy','Lucida Handwriting','Apple Chancery','Segoe Script',cursive;
+  font-size:0.9rem;color:var(--gold-light);
+  letter-spacing:1px;font-weight:400;opacity:0.85;margin-top:4px;
 }
 
 /* Welcome */
@@ -116,9 +126,6 @@ body{
 }
 .featured-card-label{font-family:'Playfair Display',serif;font-size:0.85rem;font-weight:500;letter-spacing:0.5px}
 .featured-card-sub{font-size:0.7rem;color:var(--gold-light);margin-top:2px}
-
-/* Quick Actions */
-
 
 /* Bottom Nav */
 .bottom-nav{
@@ -242,11 +249,6 @@ body{
 .d1{animation-delay:.05s}.d2{animation-delay:.1s}.d3{animation-delay:.15s}
 .d4{animation-delay:.2s}.d5{animation-delay:.25s}.d6{animation-delay:.3s}
 .d7{animation-delay:.35s}.d8{animation-delay:.4s}.d9{animation-delay:.45s}
-
-/* Asset config - UPDATE THESE PATHS to your actual asset locations */
-:root{
-  --assets-path: ;
-}
 </style>
 </head>
 <body>
@@ -254,7 +256,11 @@ body{
 
   <!-- ===== HEADER ===== -->
   <header class="header anim-in d1">
-    <img src="logo2.png" alt="Doc Azenith Presidential Suite" class="header-logo-banner">
+    <img src="logo5.png" alt="Doc Azenith" class="header-logo-img">
+    <div class="brand-text">
+      <div class="brand-name">Doc Azenith</div>
+      <div class="brand-sub">Presidential Suite</div>
+    </div>
   </header>
 
   <!-- ===== HOME PAGE ===== -->
@@ -269,7 +275,6 @@ body{
       <!-- FLIGHTS -->
       <div class="service-card anim-in d3" onclick="openModal('flights')">
         <div class="service-icon">
-          <!-- REPLACE src with: flights.png -->
           <img src="flights.png" alt="Flights"
                onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
           <svg viewBox="0 0 64 64" fill="none" style="display:none"><g transform="rotate(-25 32 32)"><path d="M32 8L38 24L56 28L38 32L36 52L32 44L28 52L26 32L8 28L26 24Z" fill="#C9A84C" opacity="0.9"/></g><line x1="8" y1="42" x2="20" y2="38" stroke="#C9A84C" stroke-width="1.5" opacity="0.4"/><line x1="6" y1="48" x2="16" y2="45" stroke="#C9A84C" stroke-width="1.2" opacity="0.3"/><line x1="10" y1="52" x2="18" y2="50" stroke="#C9A84C" stroke-width="1" opacity="0.2"/></svg>
@@ -361,7 +366,6 @@ body{
       <div class="featured-title">Featured Offerings</div>
       <div class="featured-scroll">
         <div class="featured-card" onclick="openModal('villa')">
-          <!-- REPLACE src with: villa.png or villa.jpg -->
           <img class="featured-card-img" src="villa.jpg" alt="Exclusive Villa"
                onerror="this.style.background='linear-gradient(135deg,#1a3a5c,#0d2137)'">
           <div class="featured-card-overlay">
@@ -387,7 +391,6 @@ body{
         </div>
       </div>
     </div>
-
 
   </div>
 
@@ -451,30 +454,6 @@ body{
 </div>
 
 <script>
-// ============================================================
-// ASSET CONFIGURATION — Update this path to match your setup
-// ============================================================
-// All assets are expected in this folder:
-//   
-//
-// Expected files:
-//   logo.png        — DA monogram logo with laurel wreath
-//   flights.png     — airplane icon
-//   rooms.png       — bed/room icon
-//   carhire.png     — car/sedan icon
-//   dining.png      — cloche/food dome icon
-//   laundry.png     — washing machine icon
-//   wellness.png    — spa/massage icon
-//   tours.png       — compass/map icon
-//   shopping.png    — shopping bag icon
-//   villa.jpg       — featured villa photo
-//   charter.jpg     — featured helicopter/charter photo
-//   spa.jpg         — featured spa photo
-//
-// If any file is missing, the app gracefully falls back to
-// the built-in SVG icons automatically (via onerror handlers).
-// ============================================================
-
 const modalData={
   flights:{title:'Flights',desc:'Book private and commercial flights worldwide. From first-class commercial to fully private charter jets, we handle every detail — from lounge access to in-flight dining preferences. Simply share your destination and preferred dates, and your concierge will arrange everything.'},
   rooms:{title:'Rooms & Suites',desc:'Browse and reserve our finest accommodations. From penthouse suites to oceanfront villas, each space is curated for the most discerning guests. All rooms feature personalized amenities, premium linens, and dedicated butler service.'},
