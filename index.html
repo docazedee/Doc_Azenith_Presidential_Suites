@@ -60,7 +60,7 @@ body{
 }
 .brand-sub{
   font-family:'Lucida Calligraphy','Lucida Handwriting','Apple Chancery','Segoe Script',cursive;
-  font-size:1.5rem;color:#2E7D32;
+  font-size:0.9rem;color:var(--gold-light);
   letter-spacing:1px;font-weight:400;opacity:0.85;margin-top:4px;
 }
 
@@ -246,6 +246,33 @@ body{
 .profile-item-label{font-size:0.85rem}
 .profile-item-arrow{color:var(--text-muted);font-size:0.8rem}
 
+/* Products Page */
+.products-back{
+  display:flex;align-items:center;gap:8px;color:var(--gold);
+  font-size:0.8rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  cursor:pointer;margin-bottom:16px;background:none;border:none;font-family:'Lato',sans-serif;
+}
+.products-back svg{width:18px;height:18px}
+.product-card{
+  background:var(--navy-card);border:1px solid rgba(201,168,76,0.12);
+  border-radius:var(--radius-sm);overflow:hidden;margin-bottom:14px;
+  cursor:pointer;transition:all 0.3s;
+}
+.product-card:hover{border-color:rgba(201,168,76,0.3);transform:translateY(-2px);box-shadow:var(--shadow-gold)}
+.product-card-img{width:100%;height:160px;object-fit:cover;display:block;background:#1a2030}
+.product-card-body{padding:14px 16px}
+.product-card-name{
+  font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:600;
+  color:var(--text-primary);margin-bottom:4px;
+}
+.product-card-desc{font-size:0.75rem;color:var(--text-secondary);line-height:1.4;margin-bottom:8px}
+.product-card-price{font-size:0.85rem;color:var(--gold);font-weight:700}
+.product-card-tag{
+  display:inline-block;padding:3px 10px;border-radius:12px;
+  font-size:0.6rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;
+  background:rgba(201,168,76,0.12);color:var(--gold);margin-left:8px;
+}
+
 /* Animations */
 .anim-in{opacity:0;transform:translateY(16px);animation:riseIn 0.5s forwards}
 @keyframes riseIn{to{opacity:1;transform:translateY(0)}}
@@ -259,10 +286,10 @@ body{
 
   <!-- ===== HEADER ===== -->
   <header class="header anim-in d1">
-    <img src="logo5.jpg" alt="Doc Azenith" class="header-logo-img">
+    <img src="logo2.png" alt="Doc Azenith" class="header-logo-img">
     <div class="brand-text">
       <div class="brand-name">Doc Azenith</div>
-      <div class="brand-sub">Presidential Suites</div>
+      <div class="brand-sub">Presidential Suite</div>
     </div>
   </header>
 
@@ -392,9 +419,71 @@ body{
             <div class="featured-card-sub">Rejuvenation packages</div>
           </div>
         </div>
+        <div class="featured-card" onclick="showProducts()">
+          <img class="featured-card-img" src="received_937640555524008_edit_1059708352130491.jpg" alt="Dr. Aze's Products"
+               onerror="this.style.background='linear-gradient(135deg,#3a2a1a,#1a1008)'">
+          <div class="featured-card-overlay">
+            <div class="featured-card-label">My Products</div>
+            <div class="featured-card-sub">Dr. Aze's luxury hair care</div>
+          </div>
+        </div>
       </div>
     </div>
 
+  </div>
+
+  <!-- ===== PRODUCTS PAGE ===== -->
+  <div id="page-products" class="page">
+    <button class="products-back" onclick="switchTab('home')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back
+    </button>
+    <div class="page-heading">My Products</div>
+    <div class="page-sub">Dr. Aze's luxury hair care collection — exclusively available for suite guests.</div>
+
+    <div class="product-card" onclick="openModal('product1')">
+      <img class="product-card-img" src="received_1827323621983171_edit_1059651347548586.jpg" alt="SilkyShine Shampoo & Conditioner"
+           onerror="this.style.background='linear-gradient(135deg,#3a2a1a,#1a1008)'">
+      <div class="product-card-body">
+        <div class="product-card-name">SilkyShine Shampoo & Conditioner</div>
+        <div class="product-card-desc">Ultra-hydrating formula. Illuminating & repairing. Velvet-smooth nourishment for shine & strength.</div>
+        <span class="product-card-price">₱2,490</span>
+        <span class="product-card-tag">Best Seller</span>
+      </div>
+    </div>
+
+    <div class="product-card" onclick="openModal('product2')">
+      <img class="product-card-img" src="received_4386519848293120_edit_1059743850220529.jpg" alt="Hair Treatment Oil for Men"
+           onerror="this.style.background='linear-gradient(135deg,#2a3a2a,#0d190d)'">
+      <div class="product-card-body">
+        <div class="product-card-name">Hair Treatment — Açaí & Castor Oil Blend</div>
+        <div class="product-card-desc">Concentrated boost for men. Açaí & castor oil blend for thicker, stronger hair. Available in oil & sachet.</div>
+        <span class="product-card-price">₱1,890</span>
+        <span class="product-card-tag">For Men</span>
+      </div>
+    </div>
+
+    <div class="product-card" onclick="openModal('product3')">
+      <img class="product-card-img" src="received_961868676418724_edit_1059723958305902.jpg" alt="SilkyShine Sachet Set"
+           onerror="this.style.background='linear-gradient(135deg,#3a3a1a,#1a1a08)'">
+      <div class="product-card-body">
+        <div class="product-card-name">SilkyShine Sachet Travel Set</div>
+        <div class="product-card-desc">Gold sachet duo — shampoo & conditioner. Perfect for travel. 15ml / 0.5 fl oz each.</div>
+        <span class="product-card-price">₱390</span>
+        <span class="product-card-tag">Travel Size</span>
+      </div>
+    </div>
+
+    <div class="product-card" onclick="openModal('product4')">
+      <img class="product-card-img" src="received_937640555524008_edit_1059708352130491.jpg" alt="Hair Treatment Serum & Sachet"
+           onerror="this.style.background='linear-gradient(135deg,#2a2020,#0d0808)'">
+      <div class="product-card-body">
+        <div class="product-card-name">Hair Treatment Serum & Sachet</div>
+        <div class="product-card-desc">Luxury hair & scalp therapy. Infused with keratin, argan oil & peptides. 100ml bottle + single-use sachet.</div>
+        <span class="product-card-price">₱2,190</span>
+        <span class="product-card-tag">New</span>
+      </div>
+    </div>
   </div>
 
   <!-- ===== BOOKINGS PAGE ===== -->
@@ -471,8 +560,19 @@ const modalData={
   charter:{title:'Private Charter',desc:'Travel in style with our private helicopter and yacht charter services. Whether island-hopping, coastal cruises, or aerial tours — experience destinations from an extraordinary perspective.'},
   spa:{title:'Signature Spa Experience',desc:'Our signature rejuvenation package combines ancient healing traditions with cutting-edge wellness technology. Includes aromatherapy, hot stone therapy, and customized skin treatments.'},
   emergency:{title:'Emergency Assistance',desc:'Our 24/7 emergency team is always on standby. Services include medical assistance, security, and urgent travel arrangements. Response team at your suite within 3 minutes.'},
-  checkout:{title:'Express Checkout',desc:'Enjoy seamless departure with express checkout. Your final statement will be sent to your email, and our concierge will arrange transportation to your next destination.'}
+  checkout:{title:'Express Checkout',desc:'Enjoy seamless departure with express checkout. Your final statement will be sent to your email, and our concierge will arrange transportation to your next destination.'},
+  product1:{title:'SilkyShine Shampoo & Conditioner',desc:'The ultimate duo for luminous, healthy hair. Our SilkyShine Shampoo delivers an ultra-hydrating, illuminating & repairing cleanse, while the Conditioner provides velvet-smooth nourishment for lasting shine & strength. Crafted by Aze Laboratories — 300ml / 10.1 fl oz each.'},
+  product2:{title:'Hair Treatment — Açaí & Castor Oil Blend',desc:'Specially formulated for men. This concentrated boost combines açaí and castor oil to nourish hair from root to tip, promoting thicker, stronger growth. Available as a premium dropper oil and convenient sachets for on-the-go treatment.'},
+  product3:{title:'SilkyShine Sachet Travel Set',desc:'Luxury on the go. Our signature SilkyShine Shampoo & Conditioner in elegant gold sachets — perfect for travel, gym bags, or gifting. Each sachet is 15ml / 0.5 fl oz. Experience salon-quality care wherever you are.'},
+  product4:{title:'Hair Treatment Serum & Sachet',desc:'Our flagship luxury hair & scalp therapy. Infused with keratin, argan oil & peptides to nourish, strengthen, and revitalize. Includes the full-size 100ml dropper bottle and a single-use advanced repair sachet for immediate results.'}
 };
+
+function showProducts(){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-products').classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  document.querySelector('.phone-frame').scrollTo({top:0,behavior:'smooth'});
+}
 
 function openModal(k){
   const d=modalData[k];if(!d)return;
