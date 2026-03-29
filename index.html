@@ -46,19 +46,12 @@ body{
 
 /* Header */
 .header{
-  padding:50px 24px 10px;display:flex;align-items:center;justify-content:center;
-  gap:14px;position:relative;z-index:1;
+  padding:50px 24px 10px;display:flex;align-items:center;justify-content:flex-start;
+  position:relative;z-index:1;
 }
-.logo-mark{width:80px;height:80px;flex-shrink:0}
-.logo-mark svg{width:100%;height:100%}
-.brand-text{text-align:left}
-.brand-name{
-  font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:600;
-  letter-spacing:3px;color:var(--gold);text-transform:uppercase;line-height:1.2;
-}
-.brand-sub{
-  font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:var(--gold-light);
-  letter-spacing:1.5px;font-weight:400;opacity:0.8;margin-top:2px;
+.header-logo-banner{
+  width:70%;max-width:280px;height:auto;object-fit:contain;
+  filter:drop-shadow(0 2px 8px rgba(0,0,0,0.3));
 }
 
 /* Welcome */
@@ -252,7 +245,7 @@ body{
 
 /* Asset config - UPDATE THESE PATHS to your actual asset locations */
 :root{
-  --assets-path: /mnt/user-data/uploads/;
+  --assets-path: ;
 }
 </style>
 </head>
@@ -261,32 +254,7 @@ body{
 
   <!-- ===== HEADER ===== -->
   <header class="header anim-in d1">
-    <div class="logo-mark">
-      <!-- REPLACE src with your logo file e.g. logo.png -->
-      <img src="logo2.png" alt="Doc Azenith Logo" style="width:100%;height:100%;object-fit:contain"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="display:none">
-        <g opacity="0.85" fill="none" stroke="#C9A84C" stroke-width="1.2">
-          <path d="M30 70 C28 62,24 56,22 48"/><path d="M22 48 C18 50,16 54,18 58" fill="#C9A84C" opacity="0.3"/>
-          <path d="M24 54 C20 46,18 40,18 32"/><path d="M18 32 C14 34,12 38,14 42" fill="#C9A84C" opacity="0.3"/>
-          <path d="M20 42 C18 34,18 28,20 20"/><path d="M20 20 C16 22,14 26,16 30" fill="#C9A84C" opacity="0.3"/>
-          <path d="M19 30 C20 24,22 18,26 14"/><path d="M26 14 C22 14,18 16,18 20" fill="#C9A84C" opacity="0.3"/>
-        </g>
-        <g opacity="0.85" fill="none" stroke="#C9A84C" stroke-width="1.2">
-          <path d="M70 70 C72 62,76 56,78 48"/><path d="M78 48 C82 50,84 54,82 58" fill="#C9A84C" opacity="0.3"/>
-          <path d="M76 54 C80 46,82 40,82 32"/><path d="M82 32 C86 34,88 38,86 42" fill="#C9A84C" opacity="0.3"/>
-          <path d="M80 42 C82 34,82 28,80 20"/><path d="M80 20 C84 22,86 26,84 30" fill="#C9A84C" opacity="0.3"/>
-          <path d="M81 30 C80 24,78 18,74 14"/><path d="M74 14 C78 14,82 16,82 20" fill="#C9A84C" opacity="0.3"/>
-        </g>
-        <text x="50" y="58" text-anchor="middle" font-family="'Playfair Display',serif" font-size="38" font-weight="700" fill="#C9A84C">D</text>
-        <text x="58" y="58" text-anchor="middle" font-family="'Playfair Display',serif" font-size="38" font-weight="700" fill="#C9A84C" opacity="0.85">A</text>
-        <line x1="30" y1="68" x2="70" y2="68" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/>
-      </svg>
-    </div>
-    <div class="brand-text">
-      <div class="brand-name">Doc Azenith</div>
-      <div class="brand-sub">Presidential Suite</div>
-    </div>
+    <img src="logo__2_.png" alt="Doc Azenith Presidential Suite" class="header-logo-banner">
   </header>
 
   <!-- ===== HOME PAGE ===== -->
@@ -487,7 +455,7 @@ body{
 // ASSET CONFIGURATION — Update this path to match your setup
 // ============================================================
 // All assets are expected in this folder:
-//   /mnt/user-data/uploads/
+//   
 //
 // Expected files:
 //   logo.png        — DA monogram logo with laurel wreath
