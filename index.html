@@ -289,7 +289,7 @@ body{
     <img src="logo2.png" alt="Doc Azenith" class="header-logo-img">
     <div class="brand-text">
       <div class="brand-name">Doc Azenith</div>
-      <div class="brand-sub">Presidential Suites</div>
+      <div class="brand-sub">Presidential Suite</div>
     </div>
   </header>
 
@@ -484,6 +484,30 @@ body{
         <span class="product-card-tag">New</span>
       </div>
     </div>
+
+    <div style="margin:24px 0 12px"><div class="page-heading">Skin Care</div><div class="page-sub">Dr. Aze's Sparkling Bright — luxury skin care collection.</div></div>
+
+    <div class="product-card" onclick="openModal('product5')">
+      <img class="product-card-img" src="Screenshot_20260329_191114_com_shopee_ph_ReactActivity__edit_1060204070187385.jpg" alt="Sparkling Bright Rejuvenating Set"
+           onerror="this.style.background='linear-gradient(135deg,#3a2a2a,#1a0d0d)'">
+      <div class="product-card-body">
+        <div class="product-card-name">Sparkling Bright Rejuvenating Set</div>
+        <div class="product-card-desc">The complete Dr. Aze's skincare set. Includes whitening toner, facial day cream, facial night cream, whitening soap & vitamin C body soap.</div>
+        <span class="product-card-price">₱3,490</span>
+        <span class="product-card-tag">Complete Set</span>
+      </div>
+    </div>
+
+    <div class="product-card" onclick="openModal('product6')">
+      <img class="product-card-img" src="Screenshot_20260329_191448_edit_1060334004670200.jpg" alt="Luxury Skin Care Collection"
+           onerror="this.style.background='linear-gradient(135deg,#3a2a2a,#1a0d0d)'">
+      <div class="product-card-body">
+        <div class="product-card-name">Luxury Skin Care Collection</div>
+        <div class="product-card-desc">A curation of luxury skin care — Vitamin C Body Soap, Whitening Toner, Dr. Aze gold bar, and Facial Night Cream. Brighten & rejuvenate.</div>
+        <span class="product-card-price">₱2,890</span>
+        <span class="product-card-tag">Premium</span>
+      </div>
+    </div>
   </div>
 
   <!-- ===== BOOKINGS PAGE ===== -->
@@ -564,7 +588,9 @@ const modalData={
   product1:{title:'SilkyShine Shampoo & Conditioner',desc:'The ultimate duo for luminous, healthy hair. Our SilkyShine Shampoo delivers an ultra-hydrating, illuminating & repairing cleanse, while the Conditioner provides velvet-smooth nourishment for lasting shine & strength. Crafted by Aze Laboratories — 300ml / 10.1 fl oz each.'},
   product2:{title:'Hair Treatment — Açaí & Castor Oil Blend',desc:'Specially formulated for men. This concentrated boost combines açaí and castor oil to nourish hair from root to tip, promoting thicker, stronger growth. Available as a premium dropper oil and convenient sachets for on-the-go treatment.'},
   product3:{title:'SilkyShine Sachet Travel Set',desc:'Luxury on the go. Our signature SilkyShine Shampoo & Conditioner in elegant gold sachets — perfect for travel, gym bags, or gifting. Each sachet is 15ml / 0.5 fl oz. Experience salon-quality care wherever you are.'},
-  product4:{title:'Hair Treatment Serum & Sachet',desc:'Our flagship luxury hair & scalp therapy. Infused with keratin, argan oil & peptides to nourish, strengthen, and revitalize. Includes the full-size 100ml dropper bottle and a single-use advanced repair sachet for immediate results.'}
+  product4:{title:'Hair Treatment Serum & Sachet',desc:'Our flagship luxury hair & scalp therapy. Infused with keratin, argan oil & peptides to nourish, strengthen, and revitalize. Includes the full-size 100ml dropper bottle and a single-use advanced repair sachet for immediate results.'},
+  product5:{title:'Sparkling Bright Rejuvenating Set',desc:'The complete Dr. Aze\'s Sparkling Bright skincare regimen. Rejuvenate your skin and brighten your beauty with this 5-piece set: Whitening Toner, Facial Day Cream, Facial Night Cream, Sparkling Bright Whitening Soap, and Vitamin C Body Soap. Experience the sparkle of Dr. Aze.'},
+  product6:{title:'Luxury Skin Care Collection',desc:'A curated collection of Dr. Aze\'s finest skin care essentials. Includes the Vitamin C Body Soap for brightening & glow, Whitening Toner for even skin tone, the signature Dr. Aze gold bar, and Facial Night Cream for overnight rejuvenation. Premium ingredients for radiant, healthy skin.'}
 };
 
 function showProducts(){
