@@ -61,7 +61,7 @@ body{
 .brand-sub{
   font-family:'Lucida Calligraphy','Lucida Handwriting','Apple Chancery','Segoe Script',cursive;
   font-size:1.5rem;color:2E7D32;
-  letter-spacing:1px;font-weight:700;opacity:0.85;margin-top:4px;
+  letter-spacing:1px;font-weight:400;opacity:0.85;margin-top:4px;
 }
 
 /* Welcome */
@@ -106,12 +106,15 @@ body{
 .featured{padding:28px 18px 10px;position:relative;z-index:1}
 .featured-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:500;margin-bottom:16px}
 .featured-scroll{
-  display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
-  -webkit-overflow-scrolling:touch;padding-bottom:8px;scrollbar-width:none;
+  display:flex;gap:14px;overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;padding-bottom:12px;
+  scrollbar-width:none;margin:0 -18px;padding-left:18px;padding-right:18px;
 }
 .featured-scroll::-webkit-scrollbar{display:none}
 .featured-card{
-  min-width:220px;flex-shrink:0;scroll-snap-align:start;border-radius:var(--radius);
+  min-width:75vw;max-width:280px;flex:0 0 auto;
+  scroll-snap-align:start;border-radius:var(--radius);
   overflow:hidden;position:relative;cursor:pointer;transition:transform 0.3s;
   border:1px solid rgba(201,168,76,0.1);height:180px;
 }
